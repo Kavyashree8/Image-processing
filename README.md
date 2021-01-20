@@ -75,3 +75,10 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 cv2.destroyAllWindows()
+
+![grayimage](https://user-images.githubusercontent.com/75052954/105169236-1bbcfd80-5ad0-11eb-8558-ac8e7a262733.PNG)
+![hls](https://user-images.githubusercontent.com/75052954/105169262-25466580-5ad0-11eb-8add-99b779e56158.PNG)
+![hsv](https://user-images.githubusercontent.com/75052954/105169304-32fbeb00-5ad0-11eb-8812-2c4a1fc15f12.PNG)
+![lab](https://user-images.githubusercontent.com/75052954/105169321-398a6280-5ad0-11eb-8495-9a3d5a9d00de.PNG)
+![yuv](https://user-images.githubusercontent.com/75052954/105169331-3e4f1680-5ad0-11eb-9d6d-7bf7f0b83229.PNG)
+
