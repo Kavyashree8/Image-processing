@@ -11,3 +11,4 @@ cv2.imwrite("flower.jpg")
 cv2.imshow("flower",numpy_horizontal_concat)
 cv2.waitKey()
 
+![image](https://user-images.githubusercontent.com/75052954/105162145-160eea00-5ac7-11eb-8a96-95b24179afdc.png)
