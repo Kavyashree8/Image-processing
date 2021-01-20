@@ -38,3 +38,15 @@ cv2.waitKey(0)
 
 
 ![output](https://user-images.githubusercontent.com/75052954/105166357-3ab99080-5acc-11eb-9a7a-6b01517a9da0.PNG)
+
+import cv2
+img = cv2.imread('f2.jpg')
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+cv2.imshow('Gray Image',gray)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
+cv2.imshow("Binary Image",bw_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
