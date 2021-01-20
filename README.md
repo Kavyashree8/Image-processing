@@ -23,3 +23,4 @@ cv2.imshow("image",img)
 cv2.imshow("result",res)
 cv2.waitKey(0) 
 
+![otpt](https://user-images.githubusercontent.com/75052954/105164668-4015db80-5aca-11eb-87b3-337449a1d05a.png)
