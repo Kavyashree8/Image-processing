@@ -35,3 +35,6 @@ M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 180, 1)
 res = cv2.warpAffine(img, M, (cols, rows)) 
 cv2.imshow("result.jpg", res) 
 cv2.waitKey(0)
+
+
+![output](https://user-images.githubusercontent.com/75052954/105166357-3ab99080-5acc-11eb-9a7a-6b01517a9da0.PNG)
