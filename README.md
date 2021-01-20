@@ -12,3 +12,14 @@ cv2.imshow("flower",numpy_horizontal_concat)
 cv2.waitKey()
 
 ![prt](https://user-images.githubusercontent.com/75052954/105162953-207db380-5ac8-11eb-9c29-5372ebbadc21.png)
+
+import cv2
+import numpy as np 
+img=cv2.imread("flower.jpg")
+(height,width)=img.shape[:2]
+res=cv2.resize(img,(int(width/2),int(height/2)),interpolation=cv2.INTER_CUBIC)
+cv2.imwrite("result.jpg",res)
+cv2.imshow("image",img)
+cv2.imshow("result",res)
+cv2.waitKey(0) 
+
