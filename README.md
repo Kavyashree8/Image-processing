@@ -1,4 +1,17 @@
 # Image-processing
+**1. Develop a program to display grayscale image using read and write operation.**
+**Description:**
+        Grayscaling is the process of converting an image from other color spaces
+e.g RGB, CMYK, HSV, etc. to shades of gray. It varies between complete black and
+complete white. 
+imread() : is used for reading an image.
+imwrite(): is used to write an image in memory to disk.
+imshow() :to display an image.
+waitKey(): The function waits for specified milliseconds for any keyboard event.
+destroyAllWindows():function to close all the windows.
+cv2. cvtColor() method is used to convert an image from one color space to another
+    syntax is cv2.cvtColor(Input_image,flag)
+
 import cv2
 import numpy as np
 image=cv2.imread("flower.jpg")
@@ -11,8 +24,11 @@ cv2.imwrite("flower.jpg")
 cv2.imshow("flower",numpy_horizontal_concat)
 cv2.waitKey()
 
+**OUTPUT**
+
 ![prt](https://user-images.githubusercontent.com/75052954/105162953-207db380-5ac8-11eb-9c29-5372ebbadc21.png)
 
+**2. Develop a program to perform linear transformations on an image: Scaling and Rotation**
 import cv2
 import numpy as np 
 img=cv2.imread("flower.jpg")
@@ -39,6 +55,8 @@ cv2.waitKey(0)
 
 ![output](https://user-images.githubusercontent.com/75052954/105166357-3ab99080-5acc-11eb-9a7a-6b01517a9da0.PNG)
 
+
+**4. Develop a program to convert the color image to gray scale and binary image.**
 import cv2
 img = cv2.imread('f2.jpg')
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -54,6 +72,8 @@ cv2.destroyAllWindows()
 ![gray](https://user-images.githubusercontent.com/75052954/105166952-f8448380-5acc-11eb-9a95-3084923e3f8b.PNG)
 ![binary](https://user-images.githubusercontent.com/75052954/105166971-fd093780-5acc-11eb-94c9-8262a6ac51f4.PNG)
 
+
+**5. Develop a program to convert the given color image to different color spaces.**
 import cv2
 img = cv2.imread(&#39;pet.jpg&#39;)
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -83,6 +103,8 @@ cv2.destroyAllWindows()
 ![yuv](https://user-images.githubusercontent.com/75052954/105169331-3e4f1680-5ad0-11eb-9d6d-7bf7f0b83229.PNG)
 
 
+**6. Develop a program to create an image from 2D array (generate an array of random size).**
+
 import numpy as np
 from PIL import Image 
 import cv2 as c 
@@ -96,6 +118,9 @@ c.waitKey(0)
 
 ![boutput](https://user-images.githubusercontent.com/75052954/105334646-f8f01f00-5b8b-11eb-820f-59c6b6a2a88c.PNG)
 
+
+**3. Develop a program to find the sum and mean of a set of images.
+        a. Create ‘n’ number of images and read them from the directory and perform the operations.**
 import cv2 
 import os 
 path = "D://ff"
@@ -115,4 +140,6 @@ meanImg = im/len(files)
 cv2.imshow("mean of four picture",meanImg) 
 cv2.waitKey(0)
 
+![sum](https://user-images.githubusercontent.com/75052954/105335198-9d726100-5b8c-11eb-9dbc-f4d1aa82f829.PNG)
+![mean](https://user-images.githubusercontent.com/75052954/105335220-a2371500-5b8c-11eb-8ebd-0baab9d922b1.PNG)
 
