@@ -82,3 +82,15 @@ cv2.destroyAllWindows()
 ![lab](https://user-images.githubusercontent.com/75052954/105169321-398a6280-5ad0-11eb-8495-9a3d5a9d00de.PNG)
 ![yuv](https://user-images.githubusercontent.com/75052954/105169331-3e4f1680-5ad0-11eb-9d6d-7bf7f0b83229.PNG)
 
+
+import numpy as np
+from PIL import Image 
+import cv2 as c 
+array =np.zeros([100, 200, 3], dtype=np.uint8) 
+array[:,:100] = [150, 128, 0] #Orange left side
+array[:,100:] = [0, 0, 255] #Blue right side
+img = Image.fromarray(array) 
+img.save('f4.jpg') 
+img.show() 
+c.waitKey(0)
+
