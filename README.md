@@ -12,23 +12,32 @@ destroyAllWindows():function to close all the windows.
 cv2. cvtColor() method is used to convert an image from one color space to another
     syntax is cv2.cvtColor(Input_image,flag)
 
+**Program:**
 import cv2
 import numpy as np
 image=cv2.imread("flower.jpg")
-image=cv2.resize(image,(0,0),None,.95,.95)
+cv2.imshow("Old",image)
+cv2.imshow("Gray",grey)
 grey=cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
-grey_3_channel=cv2.cvtColor(grey,cv2.COLOR_GRAY2BGR)
-numpy_horizontal=np.hstack((image,grey_3_channel))
-numpy_horizontal_concat=np.concatenate((image,grey_3_channel),axis=1)
-cv2.imwrite("flower.jpg")
-cv2.imshow("flower",numpy_horizontal_concat)
-cv2.waitKey()
+cv2.imshow("Gray",grey)
+cv2.imwrite("flower.jpg",grey)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 **OUTPUT**
 
 ![prt](https://user-images.githubusercontent.com/75052954/105162953-207db380-5ac8-11eb-9c29-5372ebbadc21.png)
 
+
 **2. Develop a program to perform linear transformations on an image: Scaling and Rotation**
+**Description:**
+**A)Scaling:**
+         Image resizing refers to the scaling of images. Scaling comes handy in many image processing as well as machinelearning applications. It helps in reducing the number of pixels from an image
+cv2.resize() method refers to the scaling of images. Scaling comes handy in many image processing as well as machine learning applications. It helps in reducing the
+number of pixels from an image 
+imshow() function in pyplot module of matplotlib library is used to display data as an image
+
+**program**
 import cv2
 import numpy as np 
 img=cv2.imread("flower.jpg")
@@ -39,10 +48,18 @@ cv2.imshow("image",img)
 cv2.imshow("result",res)
 cv2.waitKey(0) 
 
+**OUTPUT**
+
 ![otpt](https://user-images.githubusercontent.com/75052954/105164668-4015db80-5aca-11eb-87b3-337449a1d05a.png)
 ![image otpt](https://user-images.githubusercontent.com/75052954/105165140-ccc09980-5aca-11eb-91e8-908819009f9a.png)
 
+**B)Rotation:** 
+         **Description:** 
+                Image rotation is a common image processing routine used to rotate images at any desired angle. This helps in image reversal,flipping, and obtaining an intended view of the image. Image rotation has applications in matching, alignment, and other image-based algorithms. OpenCV is a well-known library used for image processing. cv2.getRotationMatrix2D Perform the counter clockwise rotation 
+warpAffine() function is the size of the output image, which should be in the form of (width, height).
+width = number of columns, and height = number of rows.
 
+**Program**
 import cv2
 import numpy as np   
 img = cv2.imread("flower.jpg") 
@@ -52,22 +69,29 @@ res = cv2.warpAffine(img, M, (cols, rows))
 cv2.imshow("result.jpg", res) 
 cv2.waitKey(0)
 
+**output**
 
 ![output](https://user-images.githubusercontent.com/75052954/105166357-3ab99080-5acc-11eb-9a7a-6b01517a9da0.PNG)
 
 
 **4. Develop a program to convert the color image to gray scale and binary image.**
+**Description:** 
+        Grayscaling is the process of converting an image from other color spaces e.g RGB, CMYK, HSV, etc. to shades of gray. It varies between complete black and
+complete white. A binary image is a monochromatic image that consists of pixels that can have one of exactly two colors, usually black and white. 
+cv2.threshold works as, if pixel value is greater than a threshold value, it is assigned one value (may be white),else it is assigned another value (may be black). destroyAllWindows() simply destroys all the windows we created. To destroy any specific window, use the function cv2.destroyWindow() where you pass the exact window name.
+**Program**
 import cv2
 img = cv2.imread('f2.jpg')
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 cv2.imshow('Gray Image',gray)
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 cv2.imshow("Binary Image",bw_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+**OUTPUT**
 
 ![gray](https://user-images.githubusercontent.com/75052954/105166952-f8448380-5acc-11eb-9a95-3084923e3f8b.PNG)
 ![binary](https://user-images.githubusercontent.com/75052954/105166971-fd093780-5acc-11eb-94c9-8262a6ac51f4.PNG)
