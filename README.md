@@ -95,3 +95,24 @@ img.show()
 c.waitKey(0)
 
 ![boutput](https://user-images.githubusercontent.com/75052954/105334646-f8f01f00-5b8b-11eb-820f-59c6b6a2a88c.PNG)
+
+import cv2 
+import os 
+path = "D://ff"
+imgs = []
+files = os.listdir(path) 
+for file in files:
+    filepath=path+'\\'+file
+imgs.append(cv2.imread(filepath)) 
+i=0 
+im = [] 
+for im in imgs:
+    cv2.imshow(files[i],imgs[i])
+    im+=imgs[i]
+    i=i+1 
+cv2.imshow('sum of four pictures',im) 
+meanImg = im/len(files)
+cv2.imshow("mean of four picture",meanImg) 
+cv2.waitKey(0)
+
+
