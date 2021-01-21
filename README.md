@@ -98,6 +98,20 @@ cv2.destroyAllWindows()
 
 
 **5. Develop a program to convert the given color image to different color spaces.**
+**Description:**
+        Color spaces are a way to represent the color channels present in the image that gives the image that particular hue 
+BGR color space: OpenCV’s default color space is RGB. 
+HSV color space: It stores color information in a cylindrical representation of RGB color points. It attempts to depict the colors as perceived by the human eye. Hue value varies from 0-179, Saturation value varies from 0-255 and Value value varies from 0-255. 
+LAB color space :
+        L – Represents Lightness.
+        A – Color component ranging from Green to Magenta.
+        B – Color component ranging from Blue to Yellow. 
+The HSL color space, also called HLS or HSI, stands for:Hue : the color type Ranges from 0 to 360° in most applications Saturation : variation of the color depending
+on the lightness. Lightness :(also Luminance or Luminosity or Intensity). Ranges from 0 to 100% (from black to white).
+YUV:Y refers to the luminance or intensity, and U/V channels represent color information. This works well in many applications because the
+human visual system perceives intensity information very differently from color information.
+
+**Program**
 import cv2
 img = cv2.imread('f3.jpg')
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -119,6 +133,10 @@ cv2.destroyAllWindows()
 ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 cv2.destroyAllWindows()
 
+
+
+**OUTPUT**
+
 ![grayimage](https://user-images.githubusercontent.com/75052954/105169236-1bbcfd80-5ad0-11eb-8558-ac8e7a262733.PNG)
 ![hls](https://user-images.githubusercontent.com/75052954/105169262-25466580-5ad0-11eb-8add-99b779e56158.PNG)
 ![hsv](https://user-images.githubusercontent.com/75052954/105169304-32fbeb00-5ad0-11eb-8812-2c4a1fc15f12.PNG)
@@ -127,7 +145,12 @@ cv2.destroyAllWindows()
 
 
 **6. Develop a program to create an image from 2D array (generate an array of random size).**
-
+**Description**
+        2D array can be defined as an array of arrays. The 2D array is organized as matrices which can be represented as the collection of rows and columns. However,
+2D arrays are created to implement a relational database look alike data structure.
+numpy.zeros() function returns a new array of given shape and type, with zeros.
+Image.fromarray(array) is creating image object of above array
+**Program**
 import numpy as np
 from PIL import Image 
 import cv2 as c 
@@ -139,11 +162,19 @@ img.save('f4.jpg')
 img.show() 
 c.waitKey(0)
 
+**OUTPUT**
+
 ![boutput](https://user-images.githubusercontent.com/75052954/105334646-f8f01f00-5b8b-11eb-820f-59c6b6a2a88c.PNG)
 
 
 **3. Develop a program to find the sum and mean of a set of images.
         a. Create ‘n’ number of images and read them from the directory and perform the operations.**
+ **Description**
+ You can add two images with the OpenCV function, cv. add(), or simply by the numpy operation res = img1 + img2. The function mean calculates the mean value M of array elements,
+independently for each channel, and return it:" This mean it should return you a scalar for each layer of you image The append() method in python adds a single item to the
+existing list. 
+listdir() method in python is used to get the list of all files and directories in the specified directory.
+**Program**
 import cv2 
 import os 
 path = "D://ff"
@@ -162,6 +193,9 @@ cv2.imshow('sum of four pictures',im)
 meanImg = im/len(files)
 cv2.imshow("mean of four picture",meanImg) 
 cv2.waitKey(0)
+
+
+**OUTPUT:**
 
 ![sum](https://user-images.githubusercontent.com/75052954/105335198-9d726100-5b8c-11eb-9dbc-f4d1aa82f829.PNG)
 ![mean](https://user-images.githubusercontent.com/75052954/105335220-a2371500-5b8c-11eb-8ebd-0baab9d922b1.PNG)
