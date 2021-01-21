@@ -94,3 +94,4 @@ img.save('f4.jpg')
 img.show() 
 c.waitKey(0)
 
+![boutput](https://user-images.githubusercontent.com/75052954/105334646-f8f01f00-5b8b-11eb-820f-59c6b6a2a88c.PNG)
