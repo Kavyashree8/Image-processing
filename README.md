@@ -13,6 +13,7 @@ cv2. cvtColor() method is used to convert an image from one color space to anoth
     syntax is cv2.cvtColor(Input_image,flag)
 
 **Program:**
+```python
 import cv2
 import numpy as np
 image=cv2.imread("flower.jpg")
@@ -23,7 +24,7 @@ cv2.imshow("Gray",grey)
 cv2.imwrite("flower.jpg",grey)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
+```
 **OUTPUT**
 
 ![prt](https://user-images.githubusercontent.com/75052954/105162953-207db380-5ac8-11eb-9c29-5372ebbadc21.png)
