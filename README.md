@@ -38,6 +38,7 @@ number of pixels from an image
 imshow() function in pyplot module of matplotlib library is used to display data as an image
 
 **program**
+```python
 import cv2
 import numpy as np 
 img=cv2.imread("flower.jpg")
@@ -47,7 +48,7 @@ cv2.imwrite("result.jpg",res)
 cv2.imshow("image",img)
 cv2.imshow("result",res)
 cv2.waitKey(0) 
-
+```
 **OUTPUT**
 
 ![otpt](https://user-images.githubusercontent.com/75052954/105164668-4015db80-5aca-11eb-87b3-337449a1d05a.png)
