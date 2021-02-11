@@ -420,3 +420,8 @@ if cv2.waitKey(0) & 0xff == 27:
 ```
 **OUTPUT:**
 
+![output4](https://user-images.githubusercontent.com/75052954/107628324-58829d00-6c15-11eb-8217-771df8536f75.jpg)
+![output5](https://user-images.githubusercontent.com/75052954/107628328-5a4c6080-6c15-11eb-91e3-703883c83aad.JPG)
+![output6](https://user-images.githubusercontent.com/75052954/107628332-5ae4f700-6c15-11eb-8207-f42e7e6da5ae.JPG)
+![output7](https://user-images.githubusercontent.com/75052954/107628337-5b7d8d80-6c15-11eb-94e3-e2ff880c90f9.JPG)
+![output8](https://user-images.githubusercontent.com/75052954/107628340-5caeba80-6c15-11eb-8cc3-9e3a814811d4.JPG)
