@@ -217,7 +217,7 @@ cv2.waitKey(0)
 
 **Program**
 ```python
- import numpy as np
+import numpy as np
 axis =3
 x=np.empty((axis,axis))
 y=np.empty((axis+2,axis+2))
@@ -239,7 +239,8 @@ for i in range(0,axis+2):
     for j in range(0,axis+2):
         print(int(y[i][j]),end='\t')
     print('\n')
-    ```
+
+ ``` 
     **OUTPUT:**
     Matrix
 
