@@ -389,3 +389,34 @@ img.enhance(2.0).show()
 ![output2](https://user-images.githubusercontent.com/75052954/107627419-1e64cb80-6c14-11eb-9e7e-ce8828f5eba9.JPG)
 ![output3](https://user-images.githubusercontent.com/75052954/107627437-245aac80-6c14-11eb-8191-ad4f7cda0629.JPG)
 
+
+**Thresholding Brightness**
+  **Description:**
+  Brightness is a relative term. It depends on your visual perception. Since brightness is a relative term, so brightness can be defined as the amount of energy output by a source of light relative to the source we are comparing it to. In some cases we can easily say that the image is bright, and in some cases, its not easy to perceive.
+
+**Program:**
+ ```python
+ import cv2  
+import numpy as np  
+
+image1 = cv2.imread('flower1.jpg')  
+
+img = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+ 
+ret, thresh1 = cv2.threshold(img, 120, 255, cv2.THRESH_BINARY)
+ret, thresh2 = cv2.threshold(img, 120, 255, cv2.THRESH_BINARY_INV)
+ret, thresh3 = cv2.threshold(img, 120, 255, cv2.THRESH_TRUNC)
+ret, thresh4 = cv2.threshold(img, 120, 255, cv2.THRESH_TOZERO)
+ret, thresh5 = cv2.threshold(img, 120, 255, cv2.THRESH_TOZERO_INV)
+
+cv2.imshow('Binary Threshold', thresh1)
+cv2.imshow('Binary Threshold Inverted', thresh2)
+cv2.imshow('Truncated Threshold', thresh3)
+cv2.imshow('Set to 0', thresh4)
+cv2.imshow('Set to 0 Inverted', thresh5)
+
+if cv2.waitKey(0) & 0xff == 27:  
+   cv2.destroyAllWindows() 
+```
+**OUTPUT:**
+
