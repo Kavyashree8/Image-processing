@@ -394,7 +394,7 @@ img.enhance(2.0).show()
   **Description:**
   Brightness is a relative term. It depends on your visual perception. Since brightness is a relative term, so brightness can be defined as the amount of energy output by a source of light relative to the source we are comparing it to. In some cases we can easily say that the image is bright, and in some cases, its not easy to perceive.
 
-**Program:**
+a)**Program:**
  ```python
  import cv2  
 import numpy as np  
@@ -425,3 +425,29 @@ if cv2.waitKey(0) & 0xff == 27:
 ![output6](https://user-images.githubusercontent.com/75052954/107628332-5ae4f700-6c15-11eb-8207-f42e7e6da5ae.JPG)
 ![output7](https://user-images.githubusercontent.com/75052954/107628337-5b7d8d80-6c15-11eb-94e3-e2ff880c90f9.JPG)
 ![output8](https://user-images.githubusercontent.com/75052954/107628340-5caeba80-6c15-11eb-8cc3-9e3a814811d4.JPG)
+
+b)import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+image =cv2.imread('flower1.jpg')
+img=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+plt.imshow(img)
+plt.show()
+cv2.waitKey(0)
+ret, thresh1=cv2.threshold(img,120,255,cv2.THRESH_BINARY)
+ret, thresh2=cv2.threshold(img,120,255,cv2.THRESH_BINARY_INV)
+ret, thresh3=cv2.threshold(img,120,255,cv2.THRESH_TRUNC)
+ret, thresh4=cv2.threshold(img,120,255,cv2.THRESH_TOZERO)
+ret, thresh5=cv2.threshold(img,120,255,cv2.THRESH_TOZERO_INV)
+plt.imshow(thresh1)
+plt.show()
+plt.imshow(thresh2)
+plt.show()
+plt.imshow(thresh3)
+plt.show()
+plt.imshow(thresh4)
+plt.show()
+plt.imshow(thresh5)
+plt.show()
+
+
