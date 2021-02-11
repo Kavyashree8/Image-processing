@@ -266,3 +266,89 @@ Temp matrix
 
 ```
      
+**8) Calculate the Neighbourhood of Matrix**
+             **Description**
+                Description: Given a M x N matrix, find sum of all K x K sub-matrix 2. Given a M x N matrix and a cell (i, j), find sum of all elements of the matrix in constant time except the elements present at row i & column j of the matrix. Given a M x N matrix, calculate maximum sum submatrix of size k x k in a given M x N matrix in O (M*N) time. Here, 0 < k < M, N.
+
+
+**Program**
+```python
+import numpy as np
+axis =3
+x=np.empty((axis,axis))
+r=np.empty((axis+2,axis+2))
+x=np.empty((axis,axis))
+print("Matrix\n")
+x=np.array([[1,4,3],[2,8,5],[3,4,6]])
+for i in range(0,axis):
+    for j in range(0,axis):
+        print(int(x[i,j]),end= '\t')
+    print('\n')
+print("\nTemp matrix\n")
+for i in range(0,axis+2):
+    for j in range(0,axis+2):
+        if i==0 or i==axis+1 or j==0 or j==axis+1:
+            y[i][j]=0
+        else:
+            y[i][j]=x[i-1][j-1]
+for i in range(0,axis+2):
+    for j in range(0,axis+2):
+        print(int(y[i][j]),end='\t')
+    print('\n')
+print('Output calculated Neighbours of matrix\n')
+print('sum of Neighbours of matrix\n')
+for i in range(0,axis):
+    for j in range(0,axis):
+        r[i][j]=((y[i][j]+y[i][j+1]+y[i][j+2]+y[i+1][j]+y[i+1][j+2]+y[i+2][j]+y[i+2][j+1]+y[i+2][j+2]))
+        print(r[i][j],end='\t')
+    print('\n')
+print('\n Average of Neighbours of matrix\n')
+for i in range(0,axis):
+    for j in range(0,axis):
+        s[i][j]=((y[i][j]+y[i][j+1]+y[i][j+2]+y[i+1][j]+y[i+1][j+2]+y[i+2][j]+y[i+2][j+1]+y[i+2][j+2])/8)
+        print(s[i][j],end = '\t')
+    print('\n')
+```
+**OUTPUT**
+```pyton
+Matrix
+
+1	4	3	
+
+2	8	5	
+
+3	4	6	
+
+
+Temp matrix
+
+0	0	0	0	0	
+
+0	1	4	3	0	
+
+0	2	8	5	0	
+
+0	3	4	6	0	
+
+0	0	0	0	0	
+
+Output calculated Neighbours of matrix
+
+sum of Neighbours of matrix
+
+14.0	19.0	17.0	
+
+20.0	28.0	25.0	
+
+14.0	24.0	17.0	
+
+
+ Average of Neighbours of matrix
+
+1.75	2.375	2.125	
+
+2.5	3.5	3.125	
+
+1.75	3.0	2.125	
+```
+
