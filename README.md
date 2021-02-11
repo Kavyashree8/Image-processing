@@ -373,3 +373,16 @@ cv2.waitKey(0)
 
 ![output](https://user-images.githubusercontent.com/75052954/107626524-c8435880-6c12-11eb-9b3a-5a87b71ab675.JPG)
 
+**Contrast**
+        **Description:**
+                Description: Contrast can be simply explained as the difference between maximum and minimum pixel intensity in an image.
+**Program**
+```python
+from PIL import Image, ImageEnhance
+img = Image.open("pic1.jpeg")
+img.show()
+img=ImageEnhance.Color(img)
+img.enhance(2.0).show()
+```
+**OUTPUT**
+
