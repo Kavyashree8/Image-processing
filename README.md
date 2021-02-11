@@ -369,4 +369,5 @@ plt.show()
 cv2.waitKey(0)
 ```
 **OUTPUT**
+![output](https://user-images.githubusercontent.com/75052954/107626524-c8435880-6c12-11eb-9b3a-5a87b71ab675.JPG)
 
