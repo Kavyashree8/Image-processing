@@ -352,3 +352,21 @@ sum of Neighbours of matrix
 1.75	3.0	2.125	
 ```
 
+**9) Develop a program to implement Negative Transformation of a image**
+**Description:**
+  The second linear transformation is negative transformation, which is invert of identity transformation. In negative transformation, each value of the input image is subtracted from the L-1 and mapped onto the output image
+**Program**
+```python
+import cv2 
+import matplotlib.pyplot as plt
+img_Original = cv2.imread('pic3.jpg', 1) 
+plt.imshow(cv2.cvtColor(img_Original,cv2.COLOR_BGR2RGB))
+plt.show() 
+cv2.waitKey(0)
+img_neg = 255 - img_Original 
+plt.imshow(img_neg) 
+plt.show() 
+cv2.waitKey(0)
+```
+**OUTPUT**
+
