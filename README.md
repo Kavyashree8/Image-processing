@@ -62,6 +62,7 @@ warpAffine() function is the size of the output image, which should be in the fo
 width = number of columns, and height = number of rows.
 
 **Program**
+```python
 import cv2
 import numpy as np   
 img = cv2.imread("flower.jpg") 
@@ -70,6 +71,7 @@ M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 180, 1)
 res = cv2.warpAffine(img, M, (cols, rows)) 
 cv2.imshow("result.jpg", res) 
 cv2.waitKey(0)
+```
 
 **output**
 
@@ -82,6 +84,7 @@ cv2.waitKey(0)
 complete white. A binary image is a monochromatic image that consists of pixels that can have one of exactly two colors, usually black and white. 
 cv2.threshold works as, if pixel value is greater than a threshold value, it is assigned one value (may be white),else it is assigned another value (may be black). destroyAllWindows() simply destroys all the windows we created. To destroy any specific window, use the function cv2.destroyWindow() where you pass the exact window name.
 **Program**
+```python
 import cv2
 img = cv2.imread('f2.jpg')
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -92,6 +95,7 @@ ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 cv2.imshow("Binary Image",bw_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+```
 
 **OUTPUT**
 
@@ -114,6 +118,7 @@ YUV:Y refers to the luminance or intensity, and U/V channels represent color inf
 human visual system perceives intensity information very differently from color information.
 
 **Program**
+```python
 import cv2
 img = cv2.imread('f3.jpg')
 gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -134,7 +139,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ret, bw_img = cv2.threshold(img,127,255,cv2.THRESH_BINARY)
 cv2.destroyAllWindows()
-
+```
 
 
 **OUTPUT**
@@ -153,6 +158,7 @@ cv2.destroyAllWindows()
 numpy.zeros() function returns a new array of given shape and type, with zeros.
 Image.fromarray(array) is creating image object of above array
 **Program**
+```python
 import numpy as np
 from PIL import Image 
 import cv2 as c 
@@ -163,6 +169,7 @@ img = Image.fromarray(array)
 img.save('f4.jpg') 
 img.show() 
 c.waitKey(0)
+```
 
 **OUTPUT**
 
@@ -177,6 +184,7 @@ independently for each channel, and return it:" This mean it should return you a
 existing list. 
 listdir() method in python is used to get the list of all files and directories in the specified directory.
 **Program**
+```python
 import cv2 
 import os 
 path = "D://ff"
@@ -195,10 +203,64 @@ cv2.imshow('sum of four pictures',im)
 meanImg = im/len(files)
 cv2.imshow("mean of four picture",meanImg) 
 cv2.waitKey(0)
-
+```
 
 **OUTPUT:**
 
 ![sum](https://user-images.githubusercontent.com/75052954/105335198-9d726100-5b8c-11eb-9dbc-f4d1aa82f829.PNG)
 ![mean](https://user-images.githubusercontent.com/75052954/105335220-a2371500-5b8c-11eb-8ebd-0baab9d922b1.PNG)
 
+
+**7) Find the Neighbourhood Matrix**
+     **Description**
+                Description: A pixel's neighborhood is some set of pixels, defined by their locations relative to that pixel, which is called the center pixel. The neighborhood is a rectangular block, and as you move from one element to the next in an image matrix, the neighborhood block slides in the same direction.
+
+**Program**
+```python
+ import numpy as np
+axis =3
+x=np.empty((axis,axis))
+y=np.empty((axis+2,axis+2))
+s=np.empty((axis,axis))
+print("Matrix\n")
+x=np.array([[1,4,3],[2,8,5],[3,4,6]])
+for i in range(0,axis):
+    for j in range(0,axis):
+        print(int(x[i,j]),end= '\t')
+    print('\n')
+print("\nTemp matrix\n")
+for i in range(0,axis+2):
+    for j in range(0,axis+2):
+        if i==0 or i==axis+1 or j==0 or j==axis+1:
+            y[i][j]=0
+        else:
+            y[i][j]=x[i-1][j-1]
+for i in range(0,axis+2):
+    for j in range(0,axis+2):
+        print(int(y[i][j]),end='\t')
+    print('\n')
+    ```
+    **OUTPUT:**
+    Matrix
+
+1	4	3	
+
+2	8	5	
+
+3	4	6	
+
+
+Temp matrix
+
+0	0	0	0	0	
+
+0	1	4	3	0	
+
+0	2	8	5	0	
+
+0	3	4	6	0	
+
+0	0	0	0	0	
+
+​
+     
