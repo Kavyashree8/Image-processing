@@ -243,6 +243,7 @@ for i in range(0,axis+2):
  ``` 
     **OUTPUT:**
     Matrix
+```python
 
 1	4	3	
 
@@ -263,5 +264,5 @@ Temp matrix
 
 0	0	0	0	0	
 
-​
+```
      
