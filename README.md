@@ -386,3 +386,6 @@ img.enhance(2.0).show()
 ```
 **OUTPUT**
 
+![output2](https://user-images.githubusercontent.com/75052954/107627419-1e64cb80-6c14-11eb-9e7e-ce8828f5eba9.JPG)
+![output3](https://user-images.githubusercontent.com/75052954/107627437-245aac80-6c14-11eb-8191-ad4f7cda0629.JPG)
+
