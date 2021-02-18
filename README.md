@@ -426,7 +426,9 @@ if cv2.waitKey(0) & 0xff == 27:
 ![output7](https://user-images.githubusercontent.com/75052954/107628337-5b7d8d80-6c15-11eb-94e3-e2ff880c90f9.JPG)
 ![output8](https://user-images.githubusercontent.com/75052954/107628340-5caeba80-6c15-11eb-8cc3-9e3a814811d4.JPG)
 
-b)import cv2
+b)
+```python
+import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 image =cv2.imread('flower1.jpg')
@@ -449,5 +451,10 @@ plt.imshow(thresh4)
 plt.show()
 plt.imshow(thresh5)
 plt.show()
+
+```
+
+**OUTPUT**
+
 
 
