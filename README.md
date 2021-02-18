@@ -456,5 +456,10 @@ plt.show()
 
 **OUTPUT**
 
+![p t4](https://user-images.githubusercontent.com/75052954/108331152-55daf700-7183-11eb-904c-d945f42d49c0.JPG)
+![pt1](https://user-images.githubusercontent.com/75052954/108331165-583d5100-7183-11eb-89d4-b447bff15860.JPG)
+![pt2](https://user-images.githubusercontent.com/75052954/108331169-58d5e780-7183-11eb-9f85-04fb76032886.JPG)
+![pt3](https://user-images.githubusercontent.com/75052954/108331173-596e7e00-7183-11eb-9f86-83978e6d1e96.JPG)
+![pt5](https://user-images.githubusercontent.com/75052954/108331179-5a9fab00-7183-11eb-9f67-d45b58c02193.JPG)
 
 
