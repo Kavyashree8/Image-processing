@@ -462,4 +462,21 @@ plt.show()
 ![pt3](https://user-images.githubusercontent.com/75052954/108331173-596e7e00-7183-11eb-9f86-83978e6d1e96.JPG)
 ![pt5](https://user-images.githubusercontent.com/75052954/108331179-5a9fab00-7183-11eb-9f67-d45b58c02193.JPG)
 
+```python
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+image = cv2.imread('flower1.jpg')
+img=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
+plt.imshow(img)
+plt.show()
+gamma_two_point_two = np.array(255*(img/255)**2.2,dtype='uint8')
+img3=cv2.hconcat([gamma_two_point_two])
+plt.imshow(img3)
+plt.show()
+gamma_point_four = np.array(255*(img/255)**0.4,dtype='uint8')
+img3=cv2.hconcat([gamma_point_four])
+plt.imshow(img3)
+plt.show()
 
+```
