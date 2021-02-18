@@ -276,8 +276,8 @@ Temp matrix
 import numpy as np
 axis =3
 x=np.empty((axis,axis))
-r=np.empty((axis+2,axis+2))
-x=np.empty((axis,axis))
+y=np.empty((axis+2,axis+2))
+r=np.empty((axis,axis))
 print("Matrix\n")
 x=np.array([[1,4,3],[2,8,5],[3,4,6]])
 for i in range(0,axis):
