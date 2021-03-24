@@ -480,3 +480,156 @@ plt.imshow(img3)
 plt.show()
 
 ```
+```python
+from PIL import Image
+image = Image.open('flower1.jpg')  
+print(image.format)
+print(image.size)
+print(image.mode)
+
+# Import the necessary libraries
+from PIL import Image
+from numpy import asarray
+ 
+ 
+# load the image and convert into
+# numpy array
+img = Image.open('flower1.jpg')
+   
+numpydata = asarray(img)
+ 
+# <class 'numpy.ndarray'>
+print(type(numpydata))
+ 
+#  shape
+print(numpydata.shape) 
+
+
+import cv2
+import numpy as np
+
+img = cv2.imread('pic4.jpeg')
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+img_gaussian = cv2.GaussianBlur(gray,(3,3),0)
+
+#canny
+img_canny = cv2.Canny(img,100,200)
+
+#sobel
+img_sobelx = cv2.Sobel(img_gaussian,cv2.CV_8U,1,0,ksize=5)
+img_sobely = cv2.Sobel(img_gaussian,cv2.CV_8U,0,1,ksize=5)
+img_sobel = img_sobelx + img_sobely
+
+
+#prewitt
+kernelx = np.array([[1,1,1],[0,0,0],[-1,-1,-1]])
+kernely = np.array([[-1,0,1],[-1,0,1],[-1,0,1]])
+img_prewittx = cv2.filter2D(img_gaussian, -1, kernelx)
+img_prewitty = cv2.filter2D(img_gaussian, -1, kernely)
+
+
+cv2.imshow("Original Image", img)
+cv2.imshow("Canny", img_canny)
+cv2.imshow("Sobel X", img_sobelx)
+cv2.imshow("Sobel Y", img_sobely)
+cv2.imshow("Sobel", img_sobel)
+cv2.imshow("Prewitt X", img_prewittx)
+cv2.imshow("Prewitt Y", img_prewitty)
+cv2.imshow("Prewitt", img_prewittx + img_prewitty)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt  
+from PIL import Image
+import PIL
+im = Image.open("pic3.jpg")
+plt.subplot(221),plt.imshow(im)
+file_name = 'image-1-compressed.jpg'
+im.save("Compressed_"+file_name,optimize=True,quality=-1)
+plt.subplot(222),plt.imshow(im)
+
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread('flower1.jpg')
+b,g,r = cv2.split(img)
+rgb_img = cv2.merge([r,g,b])
+
+gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+
+plt.subplot(121),plt.imshow(rgb_img)
+plt.title('Input Image'), plt.xticks([]), plt.yticks([])
+plt.subplot(122),plt.imshow(thresh, 'gray')
+plt.title("Otus's binary threshold"), plt.xticks([]), plt.yticks([])
+plt.show()
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt  
+from PIL import Image
+import PIL
+im = Image.open("pic1.jpeg")
+plt.subplot(221),plt.imshow(im)
+
+file_name = 'image-1-compressed.jpg'
+im.save("Compressed_"+file_name,optimize=True,quality=-1)
+plt.subplot(222),plt.imshow(im)
+
+
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+
+img = cv2.imread('pic1.jpeg')
+b,g,r = cv2.split(img)
+rgb_img = cv2.merge([r,g,b])
+
+gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+ret, thresh = cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+
+plt.subplot(121),plt.imshow(rgb_img)
+plt.title('Input Image'), plt.xticks([]), plt.yticks([])
+plt.subplot(122),plt.imshow(thresh, 'gray')
+plt.title("Otus's binary threshold"), plt.xticks([]), plt.yticks([])
+plt.show()
+
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+
+img=cv2.imread("pic1.jpeg",0)
+canny=cv2.Canny(img,100,200)
+
+titles=['image','canny']
+images=[img,canny]
+
+for i in range(2):
+    plt.subplot(1,2,i+1)
+    plt.imshow(images[i],'gray')
+    plt.title(titles[i])
+    plt.xticks([])
+    plt.yticks([])
+   
+    plt.show()
+
+
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+img=cv2.imread("pic1.jpeg",1)
+fx=plt.subplots(figsize=(100,100))
+plt.subplot(321),plt.imshow(img)
+Gblur = cv2.GaussianBlur(img,(5,5),21) 
+plt.subplot(322),plt.imshow(Gblur)
+LaplacePic = cv2.Laplacian(img, 24, (5,5))
+plt.subplot(323),plt.imshow(LaplacePic)
+kernel = np.ones((5,5),np.float32)/25
+blur = cv2.filter2D(img,-1,kernel)
+
+
